@@ -13,11 +13,13 @@ const Welcome = () => {
             src="/images/SOLFISHERS.svg"
             alt="solfisher"
           />
-          <Link to="/menu">
-            <button className="w-[440px] h-[106px] bg-[#FFEB37] rounded-[220px] text-[60px] text-[#A4B8FF] font-extrabold">
-              Let's Fish!
-            </button>
-          </Link>
+          <div className="flex justify-center">
+            <Link to="/menu">
+              <button className="w-[440px]  h-[106px] bg-[#FFEB37] rounded-[220px] text-[60px] text-[#A4B8FF] font-extrabold">
+                Let's Fish!
+              </button>
+            </Link>
+          </div>
         
         </div>
       </section>

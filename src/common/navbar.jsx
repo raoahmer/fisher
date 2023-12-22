@@ -1,12 +1,12 @@
 import React from "react";
 import CustomButton from "./fish_button";
-import { WalletProvider } from '@solana/wallet-adapter-react';
+// import { WalletProvider } from '@solana/wallet-adapter-react';
 import Wallet from '../components/Wallet'; //
-import { useWallet } from '@solana/wallet-adapter-react';
+// import { useWallet } from '@solana/wallet-adapter-react';
 
 const Navbar = () => {
 
-  console.log(useWallet && useWallet)
+  // console.log(useWallet && useWallet)
   // const wallet = ''
   // const handleConnectWallet = async () => {
   //   // Connect to the wallet or perform any wallet-related actions

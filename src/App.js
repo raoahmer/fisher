@@ -6,7 +6,7 @@ import Navbar from './common/navbar';
 import Menu from './components/Menu';
 import Collection from './components/Collection';
 import Leaderboard from './components/Leaderboard';
-import { WalletProvider } from '@solana/wallet-adapter-react';
+// import { WalletProvider } from '@solana/wallet-adapter-react';
 import Fishing from './components/Fishing';
 
 function App() {

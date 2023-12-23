@@ -8,6 +8,8 @@ import Collection from './components/Collection';
 import Leaderboard from './components/Leaderboard';
 // import { WalletProvider } from '@solana/wallet-adapter-react';
 import Fishing from './components/Fishing';
+import Mode from './components/Mode';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       {/* </WalletProvider> */}
         <Routes>
           <Route path="/" exact element={<Welcome />} />
+          <Route path="/home" exact element={<Home />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/mode" element={<Mode />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/fishing" element={<Fishing />} />

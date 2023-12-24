@@ -10,6 +10,10 @@ import Leaderboard from './components/Leaderboard';
 import Fishing from './components/Fishing';
 import Mode from './components/Mode';
 import Home from './components/Home';
+import Admin from './components/Admin';
+import FishHome from './components/FishHome';
+import TokenHome from './components/TokenFish';
+import RewardHome from './components/RewardHome';
 
 function App() {
   return (
@@ -21,8 +25,12 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Welcome />} />
           <Route path="/home" exact element={<Home />} />
+          <Route path="/fish_home" exact element={<FishHome />} />
+          <Route path="/token_home" exact element={<TokenHome />} />
+          <Route path="/reward_home" exact element={<RewardHome />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/mode" element={<Mode />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/fishing" element={<Fishing />} />

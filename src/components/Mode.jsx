@@ -2,13 +2,13 @@ import React from "react";
 import '../../src/App.css';
 import CustomButton from "../common/fish_button";
 import { Link } from "react-router-dom";
-import Navbar2 from "../common/navbar2";
+import Navbar from "../common/navbar";
 
-const Mode = () => {
+const Mode = (props) => {
   return (
     <>
       <section className="Welcome">
-        <Navbar2 />
+        <Navbar name={props.name}/>
         <div className="mx-auto my-[15%] flex justify-center items-center w-[80vw]">
           <Link className="block" to="/fishing" >
             <button>

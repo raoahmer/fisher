@@ -1,12 +1,12 @@
 import React from "react";
 import '../styles/tailwind.css'
-import Navbar3 from "../common/navbar3";
+import Navbar from "../common/navbar";
 
-const Leaderboard = () => {
+const Leaderboard = (props) => {
   return (
     <>
       <section className="Welcome">
-        <Navbar3 />
+        <Navbar name={props.name} bg={props.bg} />
         <div className="mx-auto w-[85%] flex my-[2%]">
           <img src="images/leaderboard_screen.svg" alt="Leatherboard" />
         </div>

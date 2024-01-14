@@ -19,20 +19,20 @@ function App() {
   return (
     <Router>
       <div className="App">
-      {/* <WalletProvider> */}
+        {/* <WalletProvider> */}
         {/* <Navbar /> */}
-      {/* </WalletProvider> */}
+        {/* </WalletProvider> */}
         <Routes>
-          <Route path="/" exact element={<Welcome />} />
+          <Route path="/" exact element={<Welcome name='fisher' bg='inclined' />} />
           <Route path="/home" exact element={<Home />} />
-          <Route path="/fish_home" exact element={<FishHome />} />
-          <Route path="/token_home" exact element={<TokenHome />} />
+          <Route path="/fish_home" exact element={<FishHome name='fisher' />} />
+          <Route path="/token_home" exact element={<TokenHome name='fisher' />} />
           <Route path="/reward_home" exact element={<RewardHome />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/mode" element={<Mode />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/collection" element={<Collection />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/mode" element={<Mode name='mode' />} />
+          <Route path="/admin" element={<Admin name='admin' />} />
+          <Route path="/collection" element={<Collection name='collection' />} />
+          <Route path="/leaderboard" element={<Leaderboard name='leaderboard' bg='straight' />} />
           <Route path="/fishing" element={<Fishing />} />
         </Routes>
       </div>

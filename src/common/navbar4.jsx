@@ -1,7 +1,7 @@
 import React from "react";
 import CustomButton from "./fish_button";
 // import { WalletProvider } from '@solana/wallet-adapter-react';
-import Wallet from '../components/Wallet'; //
+import Wallet from '../components/WalletContext'; //
 // import { useWallet } from '@solana/wallet-adapter-react';
 
 const Navbar4 = () => {

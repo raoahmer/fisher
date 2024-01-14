@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../common/navbar";
 
 const Menu = () => {
   return (
     <>
       <section className="Welcome">
+        <Navbar />
         <div className="grid place-items-center pt-[200px] h-[800px] gap-3">
         <Link to="/fishing">
           <div>

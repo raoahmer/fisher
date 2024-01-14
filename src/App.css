@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -48,4 +49,16 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
+}
+
+.nav2_bg {
+  background: url("/public/images/nav2_bg.svg");
+}
+
+.sol_content_bg {
+  background: url("/public/images/sol_content_bg.svg");
+  width: 340px;
+  height: 108px;
+  font-size: 30px;
+  font-family: Bebas Neue;
 }

@@ -8,7 +8,7 @@ const TokenHome = () => {
   return (
     <>
       <section className="Welcome">
-        <Navbar />
+        <Navbar name='fisher' />
         <div className="mx-auto my-[10%] flex flex-col justify-center items-center">
           <img
             className="mx-auto"

@@ -8,7 +8,7 @@ const FishHome = () => {
   return (
     <>
       <section className="Welcome">
-        <Navbar />
+        <Navbar name='fisher' />
         <div className="mx-auto my-[7%] flex flex-col justify-center items-center">
           <img
             className="mx-auto"

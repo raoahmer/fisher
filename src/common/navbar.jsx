@@ -16,7 +16,8 @@ const Navbar = ({ name, bg }) => {
 
   const [provider, setProvider] = useState(undefined);
   const [receiverPublicKey, setReceiverPublicKey] = useState(undefined);
-  const [senderKeypair, setSenderKeypair] = useState(undefined);
+  const [walletBalance, setWalletBalance] = useState(0)
+  const [walletId, setWalletId] = useState(null);
   const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
   useEffect(() => {
@@ -24,33 +25,34 @@ const Navbar = ({ name, bg }) => {
     if (provider) setProvider(provider);
   }, []);
 
-  const createSender = async () => {
-    try {
-      const senderKeypair = Keypair.generate();
-      console.log('Sender account: ', senderKeypair.publicKey.toString());
+  const disconnectWallet = () => {
+    // Add logic to disconnect the wallet
+    if (provider && receiverPublicKey) {
+      // Example: Disconnecting a Phantom wallet
+      try {
+        provider.disconnect();
+        console.log('Wallet disconnected');
+      } catch (err) {
+        console.error('Error disconnecting wallet:', err);
+      }
 
-      const airdropSignature = await connection.requestAirdrop(
-        senderKeypair.publicKey,
-        LAMPORTS_PER_SOL * 2
-      );
-
-      await connection.confirmTransaction(airdropSignature);
-      console.log('Airdrop transaction signature:', airdropSignature);
-      console.log('Wallet Balance:', (await connection.getBalance(senderKeypair.publicKey)) / LAMPORTS_PER_SOL);
-
-      setSenderKeypair(senderKeypair);
-    } catch (error) {
-      console.error('Error creating sender:', error);
+      // Clear state variables
+      setReceiverPublicKey(undefined);
+      setWalletBalance(null);
     }
   };
 
+  console.log('public keyyyy', PublicKey)
   const connectWallet = async () => {
     const provider = getProvider();
     if (provider) {
       try {
-        const publicKey = await provider.connect();
-        console.log('Connected to Phantom Wallet. Public key:', publicKey.toBase58());
+        const { publicKey } = await provider.connect();
+        console.log('Connected to Phantom Wallet. Public key:', publicKey);
         setReceiverPublicKey(publicKey);
+        const balance = await connection.getBalance(new PublicKey(publicKey));
+        setWalletBalance(balance)
+        setWalletId(publicKey.toString());
       } catch (err) {
         console.error('Error connecting to Phantom Wallet:', err);
       }
@@ -69,12 +71,20 @@ const Navbar = ({ name, bg }) => {
         </div>
         <div className="sol_content_bg flex justify-between px-[20px] items-center">
           <p className="text-white font-medium">SOL/$</p>
-          <p className="text-[#7BDAFF] mx-auto">59.23</p>
+          <p className="text-[#7BDAFF] mx-auto">{walletBalance}</p>
         </div>
         <div>
           {provider && !receiverPublicKey && (
             <button className="button" onClick={connectWallet}>
               <img src="images/connect_wallet.svg" className="w-[280px] h[110px]" alt="Fisher Logo" />
+            </button>
+          )}
+          {provider && receiverPublicKey && (
+            <button
+              className="h-[100px] min-w-fit w-fit p-4 bg-no-repeat text-white border-none cursor-pointer"
+              style={{ backgroundImage: 'url("images/connect_button_bg.svg")' }}
+            >
+              {walletId}
             </button>
           )}
         </div>
